@@ -10,17 +10,17 @@ function questionRender() {
     return `
     <h5 class="card-title">${questions[currentQuestion].question}</h5>
 
-          <div class="card mb-2">
-            <div class="card-body">${questions[currentQuestion].answer_1}</div>
+          <div class="card quiz-answer mb-2" onclick="answer(1)">
+            <div id="1" class="card-body">${questions[currentQuestion].answer_1}</div>
           </div>
-          <div class="card mb-2">
-            <div class="card-body">${questions[currentQuestion].answer_2}</div>
+          <div class="card quiz-answer mb-2" onclick="answer(2)">
+            <div id="2" class="card-body">${questions[currentQuestion].answer_2}</div>
           </div>
-          <div class="card mb-2">
-            <div class="card-body">${questions[currentQuestion].answer_3}</div>
+          <div class="card quiz-answer mb-2" onclick="answer(3)">
+            <div id="3" class="card-body">${questions[currentQuestion].answer_3}</div>
           </div>
-          <div class="card mb-2">
-            <div class="card-body">${questions[currentQuestion].answer_4}</div>
+          <div class="card quiz-answer mb-2" onclick="answer(4)">
+            <div id="4" class="card-body">${questions[currentQuestion].answer_4}</div>
           </div>
           <div class="question-footer">
             <span>
@@ -32,4 +32,15 @@ function questionRender() {
 
 function nextQuestion() {
    currentQuestion++;
+}
+
+function answer(answer) {
+   
+        if (questions[currentQuestion].right_answer == answer) {
+            document.getElementById(answer).classList.add('bg-success');
+            
+        }else
+            document.getElementById(answer).classList.add('bg-danger');
+            
+  
 }
