@@ -1,10 +1,15 @@
 let currentQuestion = 0;
+let correctAnswers = 0;
 
 function init() {
+
+
    let refQuestionCard = document.getElementsByClassName("card")[0];
     
         refQuestionCard.innerHTML = questionRender();
-        document.getElementsByClassName("btn")[0].disabled = true;      
+        document.getElementsByClassName("btn")[0].disabled = true;
+        document.querySelectorAll(".quiz-answer").disabled = false; 
+    
 }
 
 function questionRender() {
@@ -33,16 +38,41 @@ function questionRender() {
 
 function nextQuestion() {
    currentQuestion++;
+   if (currentQuestion >= questions.length) {
+    openDialog();
+    return;
+}else
+{
    init();
+}
 }
 
 function answer(answer) {
         document.getElementsByClassName("btn")[0].disabled = false;
+        document.querySelectorAll(".quiz-answer").disabled = true;
         if (questions[currentQuestion].right_answer == answer) {
             document.getElementById(answer).classList.add('bg-success');
-            
+            correctAnswers++;
         }else
             document.getElementById(answer).classList.add('bg-danger');
             document.getElementById(questions[currentQuestion].right_answer).classList.add('bg-success');
-  
+}
+
+let quizModal;
+
+document.addEventListener('DOMContentLoaded', function () {
+  const modalElement = document.getElementById('quiz-modal');
+  quizModal = new bootstrap.Modal(modalElement); // Bootstrap-Objekt bauen
+});
+
+function openDialog() {
+    quizModal.show();
+    modalNumbers();
+}
+
+function modalNumbers() {
+   let answersNumbers = document.getElementById("answers-numbers");
+   answersNumbers.innerHTML = questions.length;
+   let refCorrectAnswers = document.getElementById("correct-answers");
+   refCorrectAnswers.innerHTML = correctAnswers;
 }
