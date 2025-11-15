@@ -39,3 +39,22 @@ background-color: rgba(228, 228, 228, 0.5);
 .bg-danger, .bg-success{
   color: white;
 }
+
+.modal-dialog{
+  margin-top: 350px;
+}
+
+.modal-content{
+min-height: 350px;
+
+}
+
+h5{
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.modal-body{
+  font-size: 32px;
+  font-weight: 500;
+}
