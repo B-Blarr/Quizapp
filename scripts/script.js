@@ -3,7 +3,8 @@ let currentQuestion = 0;
 function init() {
    let refQuestionCard = document.getElementsByClassName("card")[0];
     
-        refQuestionCard.innerHTML = questionRender();      
+        refQuestionCard.innerHTML = questionRender();
+        document.getElementsByClassName("btn")[0].disabled = true;      
 }
 
 function questionRender() {
@@ -32,15 +33,16 @@ function questionRender() {
 
 function nextQuestion() {
    currentQuestion++;
+   init();
 }
 
 function answer(answer) {
-   
+        document.getElementsByClassName("btn")[0].disabled = false;
         if (questions[currentQuestion].right_answer == answer) {
             document.getElementById(answer).classList.add('bg-success');
             
         }else
             document.getElementById(answer).classList.add('bg-danger');
-            
+            document.getElementById(questions[currentQuestion].right_answer).classList.add('bg-success');
   
 }
