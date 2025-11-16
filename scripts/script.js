@@ -9,6 +9,7 @@ function init() {
         refQuestionCard.innerHTML = questionRender();
         document.getElementsByClassName("btn")[0].disabled = true;
         document.querySelectorAll(".quiz-answer").disabled = false; 
+        showProgressBar();
     
 }
 
@@ -75,4 +76,11 @@ function modalNumbers() {
    answersNumbers.innerHTML = questions.length;
    let refCorrectAnswers = document.getElementById("correct-answers");
    refCorrectAnswers.innerHTML = correctAnswers;
+}
+
+function showProgressBar() {
+ let refProgressBar = document.getElementById("progress-bar");
+ let percent = ((currentQuestion +1) / questions.length) *100;
+ refProgressBar.innerHTML = percent + "%";
+ document.getElementById("progress").style.width = percent + "%";
 }

@@ -25,6 +25,18 @@
           class="card-img-top"
           alt="Brain_Image"
         />
+        <div class="progress">
+          <div id="progress"
+            class="progress-bar"
+            role="progressbar"
+            style="width: 25%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            <span id="progress-bar"></span>
+          </div>
+        </div>
         <div class="card card-body"></div>
       </div>
     </div>
@@ -35,7 +47,10 @@
             <h5 class="modal-title">Quiz Ergebnis</h5>
           </div>
           <div class="modal-body">
-            <p>Du hast <span id="correct-answers"></span> von <span id="answers-numbers"></span> Fragen richtig beantwortet!</p>
+            <p>
+              Du hast <span id="correct-answers"></span> von
+              <span id="answers-numbers"></span> Fragen richtig beantwortet!
+            </p>
           </div>
           <div class="modal-footer">
             <button

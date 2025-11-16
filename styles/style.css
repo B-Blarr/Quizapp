@@ -52,6 +52,8 @@ min-height: 350px;
 h5{
   font-size: 36px;
   font-weight: 700;
+  text-align: center;
+  width: 100%;
 }
 
 .modal-body{
