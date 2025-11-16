@@ -84,3 +84,10 @@ function showProgressBar() {
  refProgressBar.innerHTML = percent + "%";
  document.getElementById("progress").style.width = percent + "%";
 }
+
+function newBegin() {
+  currentQuestion = 0;
+  correctAnswers = 0;
+  init();
+
+}
