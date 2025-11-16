@@ -1,9 +1,10 @@
 let currentQuestion = 0;
 let correctAnswers = 0;
+let AUDIO_SUCCESS = new Audio('.//assets/sounds/right_answer.wav');
+let AUDIO_FAIL = new Audio('.//assets/sounds/wrong_answer.wav');
+let quizModal;
 
 function init() {
-
-
    let refQuestionCard = document.getElementsByClassName("card")[0];
     
         refQuestionCard.innerHTML = questionRender();
@@ -54,12 +55,17 @@ function answer(answer) {
         if (questions[currentQuestion].right_answer == answer) {
             document.getElementById(answer).classList.add('bg-success');
             correctAnswers++;
+            AUDIO_SUCCESS.play();
+
         }else
+        {
             document.getElementById(answer).classList.add('bg-danger');
             document.getElementById(questions[currentQuestion].right_answer).classList.add('bg-success');
+            AUDIO_FAIL.play();
+        }
 }
 
-let quizModal;
+
 
 document.addEventListener('DOMContentLoaded', function () {
   const modalElement = document.getElementById('quiz-modal');
@@ -89,5 +95,4 @@ function newBegin() {
   currentQuestion = 0;
   correctAnswers = 0;
   init();
-
 }
