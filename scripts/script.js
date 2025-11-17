@@ -87,7 +87,7 @@ function modalNumbers() {
 function showProgressBar() {
  let refProgressBar = document.getElementById("progress-bar");
  let percent = ((currentQuestion +1) / questions.length) *100;
- refProgressBar.innerHTML = percent + "%";
+ refProgressBar.innerHTML = percent.toFixed(0) + "%";
  document.getElementById("progress").style.width = percent + "%";
 }
 
