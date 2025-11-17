@@ -8,19 +8,23 @@
 }
 
 body {
-  min-height: 100dvh;
+  height: 100dvh;
   background: rgb(31, 42, 72);
 }
 
 .wrapper {
-  min-height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .quiz-card{
+  margin-top: 80px;
     width: 30rem;
+}
+
+.quiz-card img{
+border-radius: 16px 16px 0 0 ;
 }
 
 .question-footer{
@@ -59,4 +63,12 @@ h5{
 .modal-body{
   font-size: 32px;
   font-weight: 500;
+}
+
+.progress{
+  border-radius: 0;
+}
+
+.card-body{
+  border-radius: 0 0 16px 16px;
 }
